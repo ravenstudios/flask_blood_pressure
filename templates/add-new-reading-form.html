@@ -1,0 +1,15 @@
+{% extends 'base-template.html' %}
+{% block content %}
+<div id="content">
+  <form class="" action="add-new-reading" method="post">
+    <div class="">
+      <h1>Add New Reading</h1>
+
+      <label for="systolic">Systolic</label>
+      <input pattern="\d*" type="text" name="systolic">
+      <label for="diastolic">Diastolic</label>
+      <input pattern="\d*" type="text" name="diastolic">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}

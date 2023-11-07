@@ -1,0 +1,26 @@
+{% extends 'base-template.html' %}
+{% block content %}
+<div class="container">
+  <table class="table">
+    <thread>
+        <tr>
+          <th>Date</th>
+          <th>Systolic</th>
+          <th>Diastolic</th>
+        </tr>
+      </thread>
+      <tbody>
+      {% for reading in readings %}
+        <tr>
+              <td>{{ reading.date_entered }}</td>
+              <td>{{ reading.systolic }}</td>
+              <td>{{ reading.diastolic }}</td>
+              <td><a href="/delete-reading?_id={{ reading._id }}">Delete</a></td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+  </table>
+  <img src="{{ url_for('static',filename='imgs/blood_pressure_chart.jpeg') }}" alt="" width="50%">
+</div>
+{% endblock %}
