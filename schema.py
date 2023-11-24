@@ -1,5 +1,4 @@
 from __main__ import db
-from flask_sqlalchemy import SQLAlchemy
 import datetime
 
 
@@ -16,9 +15,9 @@ class Reading(db.Model):
 
     def __init__(self, reading):
         self.systolic = reading["systolic"][0]
-        self.diastolic = reading["systolic"][0]
+        self.diastolic = reading["diastolic"][0]
         self.date_entered = datetime.datetime.now()
 
 
     def __repr__(self):
-        return f"{self.date_entered} {self.systolic} {self.date_entered}"
+        return f"{self.date_entered} {self.systolic} {self.diastolic}"
