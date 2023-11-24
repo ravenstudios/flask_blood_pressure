@@ -1,13 +1,11 @@
 version: '3.9'
 services:
 
-  shopping_list:
-      env_file:
-        - .env
+  blood_pressure:
       build: .
-      container_name: shopping_list
+      container_name: blood_pressure
       ports:
-        - "5000:5000"
+        - "5005:5005"
       restart: unless-stopped
       volumes:
-        - /home/ravenstudios/flask_shopping_list/instance:/app/instance
+        - /home/ravenstudios/flask_blood_pressure/instance:/app/instance
